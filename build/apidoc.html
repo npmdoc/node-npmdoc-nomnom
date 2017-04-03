@@ -1,0 +1,592 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/harthur/nomnom"
+
+    >nomnom (v1.8.1)</a>
+</h1>
+<h4>Option parser with generated usage and commands</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nomnom">module nomnom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.colors">
+            function <span class="apidocSignatureSpan">nomnom.</span>colors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.command">
+            function <span class="apidocSignatureSpan">nomnom.</span>command
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.getUsage">
+            function <span class="apidocSignatureSpan">nomnom.</span>getUsage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.globalOpts">
+            function <span class="apidocSignatureSpan">nomnom.</span>globalOpts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.help">
+            function <span class="apidocSignatureSpan">nomnom.</span>help
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.nocolors">
+            function <span class="apidocSignatureSpan">nomnom.</span>nocolors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.nocommand">
+            function <span class="apidocSignatureSpan">nomnom.</span>nocommand
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.nom">
+            function <span class="apidocSignatureSpan">nomnom.</span>nom
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.opt">
+            function <span class="apidocSignatureSpan">nomnom.</span>opt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.option">
+            function <span class="apidocSignatureSpan">nomnom.</span>option
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.options">
+            function <span class="apidocSignatureSpan">nomnom.</span>options
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.opts">
+            function <span class="apidocSignatureSpan">nomnom.</span>opts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.parse">
+            function <span class="apidocSignatureSpan">nomnom.</span>parse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.parseArgs">
+            function <span class="apidocSignatureSpan">nomnom.</span>parseArgs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.printer">
+            function <span class="apidocSignatureSpan">nomnom.</span>printer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.script">
+            function <span class="apidocSignatureSpan">nomnom.</span>script
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.scriptName">
+            function <span class="apidocSignatureSpan">nomnom.</span>scriptName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.setOption">
+            function <span class="apidocSignatureSpan">nomnom.</span>setOption
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nomnom.usage">
+            function <span class="apidocSignatureSpan">nomnom.</span>usage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nomnom" id="apidoc.module.nomnom">module nomnom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.colors" id="apidoc.element.nomnom.colors">
+        function <span class="apidocSignatureSpan">nomnom.</span>colors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">colors = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.command" id="apidoc.element.nomnom.command">
+        function <span class="apidocSignatureSpan">nomnom.</span>command
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">command = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+# Commands
+Nomnom supports command-based interfaces (e.g. with git: `git add -p` and `git rebase -i` where `add` and `rebase` are the commands
+):
+
+```javascript
+var parser = require(&#x22;nomnom&#x22;);
+
+parser.<span class="apidocCodeKeywordSpan">command</span>(&#x27;browser&#x27;)
+.callback(function(opts) {
+   runBrowser(opts.url);
+})
+.help(&#x22;run browser tests&#x22;);
+
+parser.command(&#x27;sanity&#x27;)
+.option(&#x27;outfile&#x27;, {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.getUsage" id="apidoc.element.nomnom.getUsage">
+        function <span class="apidocSignatureSpan">nomnom.</span>getUsage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUsage = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.globalOpts" id="apidoc.element.nomnom.globalOpts">
+        function <span class="apidocSignatureSpan">nomnom.</span>globalOpts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">globalOpts = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.help" id="apidoc.element.nomnom.help">
+        function <span class="apidocSignatureSpan">nomnom.</span>help
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var parser = require(&#x22;nomnom&#x22;);
+
+parser.command(&#x27;browser&#x27;)
+.callback(function(opts) {
+   runBrowser(opts.url);
+})
+.<span class="apidocCodeKeywordSpan">help</span>(&#x22;run browser tests&#x22;);
+
+parser.command(&#x27;sanity&#x27;)
+.option(&#x27;outfile&#x27;, {
+   abbr: &#x27;o&#x27;,
+   help: &#x22;file to write results to&#x22;
+})
+.option(&#x27;config&#x27;, {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.nocolors" id="apidoc.element.nomnom.nocolors">
+        function <span class="apidocSignatureSpan">nomnom.</span>nocolors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nocolors = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.nocommand" id="apidoc.element.nomnom.nocommand">
+        function <span class="apidocSignatureSpan">nomnom.</span>nocommand
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nocommand = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.nom" id="apidoc.element.nomnom.nom">
+        function <span class="apidocSignatureSpan">nomnom.</span>nom
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nom = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.opt" id="apidoc.element.nomnom.opt">
+        function <span class="apidocSignatureSpan">nomnom.</span>opt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opt = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.option" id="apidoc.element.nomnom.option">
+        function <span class="apidocSignatureSpan">nomnom.</span>option
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">option = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+# nomnom
+nomnom is an option parser for node. It noms your args and gives them back to you in a hash.
+
+```javascript
+var opts = require(&#x22;nomnom&#x22;)
+.<span class="apidocCodeKeywordSpan">option</span>(&#x27;debug&#x27;, {
+   abbr: &#x27;d&#x27;,
+   flag: true,
+   help: &#x27;Print debugging info&#x27;
+})
+.option(&#x27;config&#x27;, {
+   abbr: &#x27;c&#x27;,
+   default: &#x27;config.json&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.options" id="apidoc.element.nomnom.options">
+        function <span class="apidocSignatureSpan">nomnom.</span>options
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+# Usage
+Nomnom prints out a usage message if `--help` or `-h` is an argument. Usage for these options in `test.js`:
+
+```javascript
+var opts = require(&#x22;nomnom&#x22;)
+.script(&#x22;runtests&#x22;)
+.<span class="apidocCodeKeywordSpan">options</span>({
+   path: {
+      position: 0,
+      help: &#x22;Test file to run&#x22;,
+      list: true
+   },
+   config: {
+      abbr: &#x27;c&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.opts" id="apidoc.element.nomnom.opts">
+        function <span class="apidocSignatureSpan">nomnom.</span>opts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.parse" id="apidoc.element.nomnom.parse">
+        function <span class="apidocSignatureSpan">nomnom.</span>parse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   .option(&#x27;version&#x27;, {
+      flag: true,
+      help: &#x27;print version and exit&#x27;,
+      callback: function() {
+         return &#x22;version 1.2.4&#x22;;
+      }
+   })
+   .<span class="apidocCodeKeywordSpan">parse</span>();
+
+if (opts.debug)
+   // do stuff
+```
+
+You don&#x27;t have to specify anything if you don&#x27;t want to:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.parseArgs" id="apidoc.element.nomnom.parseArgs">
+        function <span class="apidocSignatureSpan">nomnom.</span>parseArgs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseArgs = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.printer" id="apidoc.element.nomnom.printer">
+        function <span class="apidocSignatureSpan">nomnom.</span>printer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printer = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.script" id="apidoc.element.nomnom.script">
+        function <span class="apidocSignatureSpan">nomnom.</span>script
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">script = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Each command generates its own usage message when `-h` or `--help` is specified with the command.
+
+# Usage
+Nomnom prints out a usage message if `--help` or `-h` is an argument. Usage for these options in `test.js`:
+
+```javascript
+var opts = require(&#x22;nomnom&#x22;)
+.<span class="apidocCodeKeywordSpan">script</span>(&#x22;runtests&#x22;)
+.options({
+   path: {
+      position: 0,
+      help: &#x22;Test file to run&#x22;,
+      list: true
+   },
+   config: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.scriptName" id="apidoc.element.nomnom.scriptName">
+        function <span class="apidocSignatureSpan">nomnom.</span>scriptName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scriptName = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.setOption" id="apidoc.element.nomnom.setOption">
+        function <span class="apidocSignatureSpan">nomnom.</span>setOption
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOption = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nomnom.usage" id="apidoc.element.nomnom.usage">
+        function <span class="apidocSignatureSpan">nomnom.</span>usage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">usage = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
