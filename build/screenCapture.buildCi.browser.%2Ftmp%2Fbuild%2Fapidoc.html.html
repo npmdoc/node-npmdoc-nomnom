@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/harthur/nomnom"
-
-    >nomnom (v1.8.1)</a>
+    <a href="https://github.com/harthur/nomnom">nomnom (v1.8.1)</a>
 </h1>
 <h4>Option parser with generated usage and commands</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.nomnom">module nomnom</a><ol>
 
@@ -476,16 +469,16 @@ Nomnom supports command-based interfaces (e.g. with git: `git add -p` and `git r
 ):
 
 ```javascript
-var parser = require(&#x22;nomnom&#x22;);
+var parser = require("nomnom");
 
-parser.<span class="apidocCodeKeywordSpan">command</span>(&#x27;browser&#x27;)
+parser.<span class="apidocCodeKeywordSpan">command</span>('browser')
 .callback(function(opts) {
    runBrowser(opts.url);
 })
-.help(&#x22;run browser tests&#x22;);
+.help("run browser tests");
 
-parser.command(&#x27;sanity&#x27;)
-.option(&#x27;outfile&#x27;, {
+parser.command('sanity')
+.option('outfile', {
 ...</pre></li>
     </ul>
 
@@ -527,20 +520,20 @@ parser.command(&#x27;sanity&#x27;)
     <li>description and source-code<pre class="apidocCodePre">help = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```javascript
-var parser = require(&#x22;nomnom&#x22;);
+var parser = require("nomnom");
 
-parser.command(&#x27;browser&#x27;)
+parser.command('browser')
 .callback(function(opts) {
    runBrowser(opts.url);
 })
-.<span class="apidocCodeKeywordSpan">help</span>(&#x22;run browser tests&#x22;);
+.<span class="apidocCodeKeywordSpan">help</span>("run browser tests");
 
-parser.command(&#x27;sanity&#x27;)
-.option(&#x27;outfile&#x27;, {
-   abbr: &#x27;o&#x27;,
-   help: &#x22;file to write results to&#x22;
+parser.command('sanity')
+.option('outfile', {
+   abbr: 'o',
+   help: "file to write results to"
 })
-.option(&#x27;config&#x27;, {
+.option('config', {
 ...</pre></li>
     </ul>
 
@@ -613,15 +606,15 @@ parser.command(&#x27;sanity&#x27;)
 nomnom is an option parser for node. It noms your args and gives them back to you in a hash.
 
 ```javascript
-var opts = require(&#x22;nomnom&#x22;)
-.<span class="apidocCodeKeywordSpan">option</span>(&#x27;debug&#x27;, {
-   abbr: &#x27;d&#x27;,
+var opts = require("nomnom")
+.<span class="apidocCodeKeywordSpan">option</span>('debug', {
+   abbr: 'd',
    flag: true,
-   help: &#x27;Print debugging info&#x27;
+   help: 'Print debugging info'
 })
-.option(&#x27;config&#x27;, {
-   abbr: &#x27;c&#x27;,
-   default: &#x27;config.json&#x27;,
+.option('config', {
+   abbr: 'c',
+   default: 'config.json',
 ...</pre></li>
     </ul>
 
@@ -641,16 +634,16 @@ var opts = require(&#x22;nomnom&#x22;)
 Nomnom prints out a usage message if `--help` or `-h` is an argument. Usage for these options in `test.js`:
 
 ```javascript
-var opts = require(&#x22;nomnom&#x22;)
-.script(&#x22;runtests&#x22;)
+var opts = require("nomnom")
+.script("runtests")
 .<span class="apidocCodeKeywordSpan">options</span>({
    path: {
       position: 0,
-      help: &#x22;Test file to run&#x22;,
+      help: "Test file to run",
       list: true
    },
    config: {
-      abbr: &#x27;c&#x27;,
+      abbr: 'c',
 ...</pre></li>
     </ul>
 
@@ -678,11 +671,11 @@ var opts = require(&#x22;nomnom&#x22;)
     <ul>
     <li>description and source-code<pre class="apidocCodePre">parse = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-   .option(&#x27;version&#x27;, {
+   .option('version', {
       flag: true,
-      help: &#x27;print version and exit&#x27;,
+      help: 'print version and exit',
       callback: function() {
-         return &#x22;version 1.2.4&#x22;;
+         return "version 1.2.4";
       }
    })
    .<span class="apidocCodeKeywordSpan">parse</span>();
@@ -691,7 +684,7 @@ if (opts.debug)
    // do stuff
 ```
 
-You don&#x27;t have to specify anything if you don&#x27;t want to:
+You don't have to specify anything if you don't want to:
 ...</pre></li>
     </ul>
 
@@ -738,12 +731,12 @@ Each command generates its own usage message when `-h` or `--help` is specified 
 Nomnom prints out a usage message if `--help` or `-h` is an argument. Usage for these options in `test.js`:
 
 ```javascript
-var opts = require(&#x22;nomnom&#x22;)
-.<span class="apidocCodeKeywordSpan">script</span>(&#x22;runtests&#x22;)
+var opts = require("nomnom")
+.<span class="apidocCodeKeywordSpan">script</span>("runtests")
 .options({
    path: {
       position: 0,
-      help: &#x22;Test file to run&#x22;,
+      help: "Test file to run",
       list: true
    },
    config: {
@@ -839,16 +832,16 @@ Nomnom supports command-based interfaces (e.g. with git: `git add -p` and `git r
 ):
 
 ```javascript
-var parser = require(&#x22;nomnom&#x22;);
+var parser = require("nomnom");
 
-parser.<span class="apidocCodeKeywordSpan">command</span>(&#x27;browser&#x27;)
+parser.<span class="apidocCodeKeywordSpan">command</span>('browser')
 .callback(function(opts) {
    runBrowser(opts.url);
 })
-.help(&#x22;run browser tests&#x22;);
+.help("run browser tests");
 
-parser.command(&#x27;sanity&#x27;)
-.option(&#x27;outfile&#x27;, {
+parser.command('sanity')
+.option('outfile', {
 ...</pre></li>
     </ul>
 
@@ -890,20 +883,20 @@ parser.command(&#x27;sanity&#x27;)
     <li>description and source-code<pre class="apidocCodePre">help = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```javascript
-var parser = require(&#x22;nomnom&#x22;);
+var parser = require("nomnom");
 
-parser.command(&#x27;browser&#x27;)
+parser.command('browser')
 .callback(function(opts) {
    runBrowser(opts.url);
 })
-.<span class="apidocCodeKeywordSpan">help</span>(&#x22;run browser tests&#x22;);
+.<span class="apidocCodeKeywordSpan">help</span>("run browser tests");
 
-parser.command(&#x27;sanity&#x27;)
-.option(&#x27;outfile&#x27;, {
-   abbr: &#x27;o&#x27;,
-   help: &#x22;file to write results to&#x22;
+parser.command('sanity')
+.option('outfile', {
+   abbr: 'o',
+   help: "file to write results to"
 })
-.option(&#x27;config&#x27;, {
+.option('config', {
 ...</pre></li>
     </ul>
 
@@ -976,15 +969,15 @@ parser.command(&#x27;sanity&#x27;)
 nomnom is an option parser for node. It noms your args and gives them back to you in a hash.
 
 ```javascript
-var opts = require(&#x22;nomnom&#x22;)
-.<span class="apidocCodeKeywordSpan">option</span>(&#x27;debug&#x27;, {
-   abbr: &#x27;d&#x27;,
+var opts = require("nomnom")
+.<span class="apidocCodeKeywordSpan">option</span>('debug', {
+   abbr: 'd',
    flag: true,
-   help: &#x27;Print debugging info&#x27;
+   help: 'Print debugging info'
 })
-.option(&#x27;config&#x27;, {
-   abbr: &#x27;c&#x27;,
-   default: &#x27;config.json&#x27;,
+.option('config', {
+   abbr: 'c',
+   default: 'config.json',
 ...</pre></li>
     </ul>
 
@@ -1004,16 +997,16 @@ var opts = require(&#x22;nomnom&#x22;)
 Nomnom prints out a usage message if `--help` or `-h` is an argument. Usage for these options in `test.js`:
 
 ```javascript
-var opts = require(&#x22;nomnom&#x22;)
-.script(&#x22;runtests&#x22;)
+var opts = require("nomnom")
+.script("runtests")
 .<span class="apidocCodeKeywordSpan">options</span>({
    path: {
       position: 0,
-      help: &#x22;Test file to run&#x22;,
+      help: "Test file to run",
       list: true
    },
    config: {
-      abbr: &#x27;c&#x27;,
+      abbr: 'c',
 ...</pre></li>
     </ul>
 
@@ -1041,11 +1034,11 @@ var opts = require(&#x22;nomnom&#x22;)
     <ul>
     <li>description and source-code<pre class="apidocCodePre">parse = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-   .option(&#x27;version&#x27;, {
+   .option('version', {
       flag: true,
-      help: &#x27;print version and exit&#x27;,
+      help: 'print version and exit',
       callback: function() {
-         return &#x22;version 1.2.4&#x22;;
+         return "version 1.2.4";
       }
    })
    .<span class="apidocCodeKeywordSpan">parse</span>();
@@ -1054,7 +1047,7 @@ if (opts.debug)
    // do stuff
 ```
 
-You don&#x27;t have to specify anything if you don&#x27;t want to:
+You don't have to specify anything if you don't want to:
 ...</pre></li>
     </ul>
 
@@ -1101,12 +1094,12 @@ Each command generates its own usage message when `-h` or `--help` is specified 
 Nomnom prints out a usage message if `--help` or `-h` is an argument. Usage for these options in `test.js`:
 
 ```javascript
-var opts = require(&#x22;nomnom&#x22;)
-.<span class="apidocCodeKeywordSpan">script</span>(&#x22;runtests&#x22;)
+var opts = require("nomnom")
+.<span class="apidocCodeKeywordSpan">script</span>("runtests")
 .options({
    path: {
       position: 0,
-      help: &#x22;Test file to run&#x22;,
+      help: "Test file to run",
       list: true
    },
    config: {
@@ -1161,3 +1154,4 @@ var opts = require(&#x22;nomnom&#x22;)
     ]
 </div>
 </div>
+</body></html>
